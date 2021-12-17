@@ -4,6 +4,7 @@ import akka.NotUsed;
 import akka.actor.ActorSystem;
 import akka.http.javadsl.Http;
 import akka.http.javadsl.ServerBinding;
+import akka.pattern.Patterns;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
@@ -23,6 +24,6 @@ public class TaskTestingApp {
         System.out.printf("Server online at https://%s%d/\nPress ENTER to stop\n", HOST, PORT);
         System.in.read();
         //binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
-        
+
     }
 }
