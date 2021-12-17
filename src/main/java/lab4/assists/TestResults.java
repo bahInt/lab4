@@ -9,4 +9,8 @@ public class TestResults implements Serializable {
     public TestResults(String packID, String result) {
         this.packID = packID;
     }
+
+    public String getPackID() {
+        return packID;
+    }
 }
