@@ -6,7 +6,7 @@ import akka.japi.pf.ReceiveBuilder;
 public class StorageActor extends AbstractActor {
     @Override
     public Receive createReceive() {
-        private Map<String, String>
+        private Map<String, String> storage = new
 
         return ReceiveBuilder.create()
                 .match(TestResult.class, r -> {
