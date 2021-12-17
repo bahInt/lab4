@@ -7,7 +7,9 @@ public class StorageActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match(TestResult.class)
+                .match(TestResult.class, r -> {
+
+                })
                 .build();
     }
 }
