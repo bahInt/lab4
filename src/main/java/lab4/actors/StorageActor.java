@@ -19,7 +19,7 @@ public class StorageActor extends AbstractActor {
                     storage.put(r.getPackID(), r.getResult());
                 })
                 .match(GetMessage.class, r ->
-                        sender().tell(new PutMessage(r.getPackID, storage)))
+                        sender().tell(new PutMessage(r.getPackID, storage.get())))
                 .build();
     }
 }
