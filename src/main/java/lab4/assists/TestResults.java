@@ -8,7 +8,7 @@ public class TestResults implements Serializable {
 
     public TestResults(String packID, String result) {
         this.packID = packID;
-        this.result = 
+        this.result = result;
     }
 
     public String getPackID() {
