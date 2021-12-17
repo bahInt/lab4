@@ -7,6 +7,6 @@ public class TestResults implements Serializable {
     private  final String packID, result;
 
     public TestResults() {
-        
+        this.packID = packID;
     }
 }
