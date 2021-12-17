@@ -17,6 +17,6 @@ public class TaskTestingApp {
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         //final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
         //final CompletionStage<ServerBinding> binding = http.bindAndHandle()
-        System.out.println("Server online at");
+        System.out.println("Server online at https://");
     }
 }
