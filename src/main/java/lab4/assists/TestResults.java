@@ -13,4 +13,8 @@ public class TestResults implements Serializable {
     public String getPackID() {
         return packID;
     }
+
+    public String getResult() {
+        return result;
+    }
 }
