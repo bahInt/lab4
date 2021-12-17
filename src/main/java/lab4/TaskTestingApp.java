@@ -11,6 +11,8 @@ import akka.stream.javadsl.Flow;
 import java.util.concurrent.CompletionStage;
 
 public class TaskTestingApp {
+    private static final int PORT = 8088;
+    private 
     public static void main(String[] args) {
         ActorSystem system = ActorSystem.create("webtest");
         final Http http = Http.get(system);
