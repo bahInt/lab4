@@ -7,6 +7,7 @@ import akka.routing.ActorRefRoutee;
 import akka.routing.RoundRobinRoutingLogic;
 import akka.routing.Routee;
 import akka.routing.Router;
+import lab4.assists.PackageData;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,7 @@ public class RouterActor extends AbstractActor {
 
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match()
+                .match(PackageData.class, this::executeTests)
                 .match()
                 .matchAny(o -> log.info("recieved unknown message")
                 .build();
