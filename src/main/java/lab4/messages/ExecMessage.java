@@ -22,4 +22,8 @@ public class ExecMessage {
     public String getFuncName() {
         return funcName;
     }
+
+    public String getJsScript() {
+        return jsScript;
+    }
 }
