@@ -1,4 +1,6 @@
 package lab4.actors;
 
-public class ExecutorActor {
+import akka.actor.AbstractActor;
+
+public class ExecutorActor extends AbstractActor {
 }
