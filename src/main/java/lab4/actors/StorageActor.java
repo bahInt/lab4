@@ -9,9 +9,7 @@ import lab4.messages.PutMessage;
 import lab4.messages.ResultMessage;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class StorageActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
@@ -32,12 +30,11 @@ public class StorageActor extends AbstractActor {
         sender().tell(new ResultMessage(r.getPackID(), storage.get(r.getPackID())), getContext().parent());
     }
 
-    @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(PutMessage.class, this::store)
                 .match(GetMessage.class, this::sendResult)
-                .matchAny(o -> log.info("recieved unknown message"))
+                .matchAny(o -> log.info("received unknown message"))
                 .build();
     }
 }
