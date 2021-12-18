@@ -3,6 +3,7 @@ package lab4.actors;
 import akka.actor.*;
 import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
+import akka.routing.ActorRefRoutee;
 import akka.routing.Routee;
 
 import java.util.ArrayList;
@@ -17,7 +18,9 @@ public class RouterActor extends AbstractActor {
 
         List<Routee> routees = new ArrayList<Routee>();
         for (int i = 0; i < 5; i++) {
-            
+            ActorRef r = getContext().actorOf(Props.create(ExecutorActor.class));
+            getContext().watch(r);
+            routees.add(new ActorRefRoutee(r));
         }
     }
 
