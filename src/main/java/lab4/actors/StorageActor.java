@@ -25,6 +25,10 @@ public class StorageActor extends AbstractActor {
         }
     }
 
+    private void sendResult(GetMessage r) {
+
+    }
+
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
