@@ -25,6 +25,8 @@ public class RouterActor extends AbstractActor {
     private Router router;
     private ActorRef storage;
 
+    private static SupervisorStrategy strategy =
+
     public RouterActor() {
         storage = getContext().actorOf(Props.create(StorageActor.class), STORAGE_NAME);
         getContext().watch(storage);
