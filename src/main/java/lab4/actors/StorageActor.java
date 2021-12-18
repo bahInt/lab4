@@ -1,6 +1,8 @@
 package lab4.actors;
 
 import akka.actor.AbstractActor;
+import akka.event.Logging;
+import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
 import lab4.messages.GetMessage;
 import lab4.messages.PutMessage;
@@ -12,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class StorageActor extends AbstractActor {
+    p
     private Map<String, ArrayList<String>> storage = new HashMap<>();
 
     private void store(PutMessage r) {
