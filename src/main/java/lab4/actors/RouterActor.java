@@ -2,6 +2,8 @@ package lab4.actors;
 
 import akka.actor.*;
 import akka.actor.Props;
+import akka.event.Logging;
+import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
 import akka.routing.ActorRefRoutee;
 import akka.routing.RoundRobinRoutingLogic;
@@ -13,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RouterActor extends AbstractActor {
+    private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
+
     private static final String STORAGE_NAME = "storage";
 
     private Router router;
@@ -37,7 +41,7 @@ public class RouterActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(PackageData.class, this::executeTests)
                 .match()
-                .matchAny(o -> log.info("recieved unknown message")
+                .matchAny(o -> log.info("received unknown message")
                 .build();
     }
 }
