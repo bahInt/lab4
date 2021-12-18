@@ -8,12 +8,11 @@ import lab4.assists.ResultMessage;
 
 
 import java.util.ArrayList;
-
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.Map;
 
 public class StorageActor extends AbstractActor {
-    private Map<String, ArrayList<String>> storage = new Hashtable<>();
+    private Map<String, ArrayList<String>> storage = new HashMap<>();
 
     @Override
     public Receive createReceive() {
