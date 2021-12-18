@@ -7,7 +7,7 @@ public class ResultMessage {
     private final ArrayList<String> results;
 
     public ResultMessage(String packID, ArrayList<String> results) {
-        this.
+        this.packID = packID;
     }
 
 }
