@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RouterActor extends AbstractActor {
+    private static final String STORAGE_NAME = "storage";
+
     private Router router;
     private ActorRef storage;
 
