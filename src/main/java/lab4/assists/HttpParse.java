@@ -3,6 +3,8 @@ package lab4.assists;
 import akka.actor.ActorRef;
 import akka.http.javadsl.server.Route;
 
+import static akka.http.javadsl.server.Directives.parameter;
+
 public class HttpParse {
     private final ActorRef router;
 
@@ -12,7 +14,7 @@ public class HttpParse {
 
     public Route createRoute() {
         return route(
-                
-        );
+                get(() -> parameter("packageID", (pID) -> {]
+                    ));
     }
 }
