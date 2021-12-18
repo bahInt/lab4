@@ -4,4 +4,6 @@ import akka.actor.AbstractActor;
 
 public class RouterActor extends AbstractActor {
     public RouterActor() {}
+
+    public Receive createReceive() {}
 }
