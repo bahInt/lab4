@@ -10,5 +10,8 @@ public class TestData {
     public TestData(String testName, String expectedResult, ArrayList<Object> params) {
         this.testName = testName;
         this.expectedResult = expectedResult;
+        this.params = params;
     }
+
+    
 }
