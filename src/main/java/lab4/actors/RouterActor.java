@@ -18,6 +18,8 @@ import lab4.messages.GetMessage;
 import java.util.ArrayList;
 import java.util.List;
 
+import static akka.actor.SupervisorStrategy.restart;
+
 public class RouterActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
 
