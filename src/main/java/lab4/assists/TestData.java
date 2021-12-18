@@ -20,5 +20,8 @@ public class TestData {
     public String getExpectedResult() {
         return expectedResult;
     }
-    
+
+    public ArrayList<Object> getParams() {
+        return params;
+    }
 }
