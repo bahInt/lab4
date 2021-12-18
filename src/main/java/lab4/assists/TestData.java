@@ -1,8 +1,11 @@
 package lab4.assists;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 
 public class TestData {
+    @JsonProperty("testName")
     private  final String testName;
     private final String expectedResult;
     private final ArrayList<Object> params;
