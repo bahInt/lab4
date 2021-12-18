@@ -29,6 +29,7 @@ public class TaskTestingApp {
         LoggingAdapter l = Logging.getLogger(system, LOG_SOURCE);
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
+        
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = instance.createRoute().flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle()
         System.out.printf("Server online at https://%s%d/\nPress ENTER to stop\n", HOST, PORT);
