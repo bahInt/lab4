@@ -19,7 +19,9 @@ public class StorageActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(PutMessage.class, r -> {
                     ArrayList<String> results = storage.get(r.getPackID());
-                    if(results != null) results.add(r.getResult());
+                    if(results != null) {
+                        results.add(r.getResult());
+                    } 
                 })
                 .match(GetMessage.class, r ->
                         sender().tell(new ResultMessage(r.getPackID(), storage.get(r.getPackID())), self()))
