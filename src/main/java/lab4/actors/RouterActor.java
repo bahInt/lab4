@@ -40,7 +40,8 @@ public class RouterActor extends AbstractActor {
 
     private void executeTests(PackageData r) {
         for (TestData t : r.getTests()) {
-            router.route(new ExecMessage(r.getPackageID(), r.getFunctionName()
+            router.route(new ExecMessage(r.getPackageID(), r.getFunctionName(),
+                    r.getJsScript(), t.getTestName(), t.getExpectedResult(),
         }
     }
 
