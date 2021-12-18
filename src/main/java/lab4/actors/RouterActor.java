@@ -16,7 +16,9 @@ public class RouterActor extends AbstractActor {
         getContext().watch(storage);
 
         List<Routee> routees = new ArrayList<Routee>();
-        
+        for (int i = 0; i < 5; i++) {
+            
+        }
     }
 
     public Receive createReceive() {
