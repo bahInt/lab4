@@ -30,7 +30,8 @@ public class HttpParse {
                 })),
                 post(() -> entity(Jackson.unmarshaller(PackageData.class),msg -> {
                     router.tell(msg, ActorRef.noSender());
-                    return complete(SUCCESS_MSG);)
+                    return complete(SUCCESS_MSG);
+                }))
         );
     }
 }
