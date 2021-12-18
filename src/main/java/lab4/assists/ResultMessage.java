@@ -8,6 +8,7 @@ public class ResultMessage {
 
     public ResultMessage(String packID, ArrayList<String> results) {
         this.packID = packID;
+        this.results = results;
     }
 
 }
