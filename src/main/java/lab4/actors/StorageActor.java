@@ -34,7 +34,7 @@ public class StorageActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(PutMessage.class, this::store)
                 .match(GetMessage.class, this::sendResult)
-                .
+                .matchAny(o -> log.info())
                 .build();
     }
 }
