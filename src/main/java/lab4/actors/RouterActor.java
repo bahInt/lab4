@@ -11,6 +11,7 @@ import akka.routing.Routee;
 import akka.routing.Router;
 import lab4.assists.PackageData;
 import lab4.assists.TestData;
+import lab4.messages.ExecMessage;
 import lab4.messages.GetMessage;
 
 import java.util.ArrayList;
@@ -38,7 +39,9 @@ public class RouterActor extends AbstractActor {
     }
 
     private void executeTests(PackageData r) {
-        for (TestData t : r.getTests()) {}
+        for (TestData t : r.getTests()) {
+            router.route(new ExecMessage(r.getPackageID(), r.getFunctionName()
+        }
     }
 
     public Receive createReceive() {
