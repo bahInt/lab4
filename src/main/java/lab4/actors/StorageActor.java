@@ -33,8 +33,8 @@ public class StorageActor extends AbstractActor {
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(PutMessage.class, this::store)
-                .match(GetMessage.class, r ->
-
+                .match(GetMessage.class, this::sendResult)
+                .
                 .build();
     }
 }
