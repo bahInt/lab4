@@ -14,6 +14,7 @@ import akka.http.javadsl.model.HttpResponse;
 import akka.stream.ActorMaterializer;
 import akka.stream.javadsl.Flow;
 import lab4.actors.RouterActor;
+import lab4.assists.HttpParse;
 
 import java.util.concurrent.CompletionStage;
 
@@ -29,7 +30,7 @@ public class TaskTestingApp {
         LoggingAdapter l = Logging.getLogger(system, LOG_SOURCE);
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
-        
+        HttpParse instance = new HttpParse(routerActor);
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = instance.createRoute().flow(system, materializer);
         final CompletionStage<ServerBinding> binding = http.bindAndHandle()
         System.out.printf("Server online at https://%s%d/\nPress ENTER to stop\n", HOST, PORT);
