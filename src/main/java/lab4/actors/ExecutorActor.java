@@ -10,7 +10,9 @@ import lab4.messages.PutMessage;
 public class ExecutorActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
 
-    
+    private String execute(ExecMessage r) {
+        
+    }
 
     private void sendToStorage(ExecMessage r) {
         sender().tell(new PutMessage(r.getPackID(), execute(r)), self());
