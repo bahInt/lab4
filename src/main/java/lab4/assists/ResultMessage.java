@@ -1,2 +1,4 @@
-package lab4.assists;public class ResultMessage {
+package lab4.assists;
+
+public class ResultMessage {
 }
