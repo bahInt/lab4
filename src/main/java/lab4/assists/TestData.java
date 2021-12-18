@@ -16,5 +16,9 @@ public class TestData {
     public String getTestName() {
         return testName;
     }
+
+    public String getExpectedResult() {
+        return expectedResult;
+    }
     
 }
