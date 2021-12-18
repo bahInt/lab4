@@ -27,7 +27,9 @@ public class HttpParse {
                     Future<Object> future = Patterns.ask(router, new GetMessage(pID), TIMEOUT);
                     return completeOKWithFuture(future, Jackson.marshaller());
                 })),
-                post(() -> entity(Jackson.unmarshaller(PackageData.class),)
+                post(() -> entity(Jackson.unmarshaller(PackageData.class),msg -> {
+                    router.tell(msg, ActorRef.noSender());
+                    return complete(SUCCESS_MSG);)
         );
     }
 }
