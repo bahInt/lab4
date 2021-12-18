@@ -16,11 +16,16 @@ public class ExecutorActor extends AbstractActor {
 
     private String execute(ExecMessage r) {
         String result;
-        try {} catch (Exception e) {}
-        ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-        engine.eval(r.getJsScript());
-        Invocable invocable = (Invocable) engine;
-        return invocable.invokeFunction(r.getFuncName(), r.getParams().toArray()).toString();
+        try {
+            ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+            engine.eval(r.getJsScript());
+            Invocable invocable = (Invocable) engine;
+            return invocable.invokeFunction(r.getFuncName(), r.getParams().toArray()).toString();
+        } catch (Exception e) {
+            return String.format("%s: ERROR, %s", r.getTestName(), e.toString());
+            
+        }
+
     }
 
     private void sendToStorage(ExecMessage r) {
