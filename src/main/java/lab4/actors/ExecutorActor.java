@@ -4,10 +4,13 @@ import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
 
 public class ExecutorActor extends AbstractActor {
+    private void sendToStorage(ExecMessage r) {
+    }
+}
 
-    @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
-                .match()
+                .match(ExecMessage.class, this::sendToStorage)
+                
                 .build();
     }
