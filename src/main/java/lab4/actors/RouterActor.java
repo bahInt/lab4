@@ -4,7 +4,9 @@ import akka.actor.*;
 import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
 import akka.routing.ActorRefRoutee;
+import akka.routing.RoundRobinRoutingLogic;
 import akka.routing.Routee;
+import akka.routing.Router;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +24,7 @@ public class RouterActor extends AbstractActor {
             getContext().watch(r);
             routees.add(new ActorRefRoutee(r));
         }
+        router = new Router(new RoundRobinRoutingLogic(), routees);
     }
 
     public Receive createReceive() {
