@@ -41,6 +41,5 @@ public class TaskTestingApp {
         l.info("Server online at https://{}:{}/\n", HOST, PORT);
         System.in.read();
         binding.thenCompose(ServerBinding::unbind).thenAccept(unbound -> system.terminate());
-
     }
 }
