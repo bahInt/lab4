@@ -26,4 +26,8 @@ public class ExecMessage {
     public String getJsScript() {
         return jsScript;
     }
+
+    public ArrayList<Object> getParams() {
+        return params;
+    }
 }
