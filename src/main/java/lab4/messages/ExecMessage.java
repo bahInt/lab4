@@ -15,5 +15,7 @@ public class ExecMessage {
         this.params = params;
     }
 
-    
+    public String getPackID() {
+        return packID;
+    }
 }
