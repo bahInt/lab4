@@ -34,4 +34,5 @@ public class ExecMessage {
     public String getTestName() {
         return testName;
     }
+    
 }
