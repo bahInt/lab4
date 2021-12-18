@@ -1,2 +1,4 @@
-package lab4.assists;public class HttpParse {
+package lab4.assists;
+
+public class HttpParse {
 }
