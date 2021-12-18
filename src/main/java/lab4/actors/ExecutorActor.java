@@ -20,12 +20,13 @@ public class ExecutorActor extends AbstractActor {
             ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
             engine.eval(r.getJsScript());
             Invocable invocable = (Invocable) engine;
-            return invocable.invokeFunction(r.getFuncName(), r.getParams().toArray()).toString();
+            result = invocable.invokeFunction(r.getFuncName(), r.getParams().toArray()).toString();
         } catch (Exception e) {
             return String.format("%s: ERROR, %s", r.getTestName(), e.toString());
-            
         }
-
+        if(result.equals(r.getExpRes())) {
+            return String.format("%s: OK, result: %s", r.getTestName(), result);
+        }
     }
 
     private void sendToStorage(ExecMessage r) {
