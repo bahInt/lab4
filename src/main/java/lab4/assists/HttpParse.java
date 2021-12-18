@@ -1,6 +1,7 @@
 package lab4.assists;
 
 import akka.actor.ActorRef;
+import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.server.Route;
 import akka.pattern.Patterns;
 import akka.util.Timeout;
@@ -24,7 +25,7 @@ public class HttpParse {
         return route(
                 get(() -> parameter("packageID", (pID) -> {
                     Future<Object> future = Patterns.ask(router, new GetMessage(pID), TIMEOUT);
-                    return ;
+                    return completeOKWithFuture(future, Jackson.marshaller());
                 })),
         );
     }
