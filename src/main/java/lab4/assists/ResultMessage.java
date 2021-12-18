@@ -6,8 +6,8 @@ public class ResultMessage {
     private final String packID;
     private final ArrayList<String> results;
 
-    public ResultMessage() {
-        
+    public ResultMessage(String packID, ArrayList<String> results) {
+        this.
     }
 
 }
