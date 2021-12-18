@@ -9,6 +9,7 @@ public class TestData {
     private  final String testName;
     @JsonProperty("expectedResult")
     private final String expectedResult;
+    @JsonProperty("params")
     private final ArrayList<Object> params;
 
     public TestData(String testName, String expectedResult, ArrayList<Object> params) {
