@@ -14,6 +14,7 @@ public class PackageData {
     @JsonProperty("tests")
     private final ArrayList<TestData> tests;
 
+    @JsonCreator
     public PackageData(@JsonProperty("packageId") String packageId,
                        @JsonProperty("jsScript") String jsScript,
                        @JsonProperty("functionName") String functionName,
