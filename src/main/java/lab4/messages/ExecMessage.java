@@ -31,5 +31,7 @@ public class ExecMessage {
         return params;
     }
 
-
+    public String getTestName() {
+        return testName;
+    }
 }
