@@ -11,6 +11,7 @@ public class ExecutorActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
 
     private String execute(ExecMessage r) {
+        String result;
         
     }
 
