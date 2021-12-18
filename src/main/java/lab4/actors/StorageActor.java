@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class StorageActor extends AbstractActor {
-    p
+    private  final LoggingAdapter log = Logging.
     private Map<String, ArrayList<String>> storage = new HashMap<>();
 
     private void store(PutMessage r) {
