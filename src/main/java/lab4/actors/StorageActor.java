@@ -2,9 +2,9 @@ package lab4.actors;
 
 import akka.actor.AbstractActor;
 import akka.japi.pf.ReceiveBuilder;
-import lab4.assists.GetMessage;
-import lab4.assists.PutMessage;
-import lab4.assists.ResultMessage;
+import lab4.messages.GetMessage;
+import lab4.messages.PutMessage;
+import lab4.messages.ResultMessage;
 
 
 import java.util.ArrayList;

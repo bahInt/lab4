@@ -1,4 +1,4 @@
-package lab4.assists;
+package lab4.messages;
 
 import java.util.ArrayList;
 
