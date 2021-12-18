@@ -26,6 +26,8 @@ public class ExecutorActor extends AbstractActor {
         }
         if(result.equals(r.getExpRes())) {
             return String.format("%s: OK, result: %s", r.getTestName(), result);
+        } else {
+            return String.format()
         }
     }
 
