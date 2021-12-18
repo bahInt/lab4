@@ -21,7 +21,11 @@ public class StorageActor extends AbstractActor {
                     ArrayList<String> results = storage.get(r.getPackID());
                     if(results != null) {
                         results.add(r.getResult());
-                    } 
+                    } else {
+                        results = new ArrayList<>();
+                        results.add(r.getResult());
+                        storage.put(r.getPackID(), results);
+                    }
                 })
                 .match(GetMessage.class, r ->
                         sender().tell(new ResultMessage(r.getPackID(), storage.get(r.getPackID())), self()))
