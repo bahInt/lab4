@@ -4,6 +4,7 @@ import akka.actor.*;
 import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
+import akka.japi.pf.DeciderBuilder;
 import akka.japi.pf.ReceiveBuilder;
 import akka.routing.ActorRefRoutee;
 import akka.routing.RoundRobinRoutingLogic;
@@ -26,6 +27,8 @@ public class RouterActor extends AbstractActor {
     private ActorRef storage;
 
     private static SupervisorStrategy strategy =
+            new OneForOneStrategy(MAX_RETRIES, DURATION,
+                    DeciderBuilder.matchAny(o -> restart()).build());
 
     public RouterActor() {
         storage = getContext().actorOf(Props.create(StorageActor.class), STORAGE_NAME);
