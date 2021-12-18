@@ -16,6 +16,7 @@ import static akka.http.javadsl.server.Directives.*;
 public class HttpParse {
     private final ActorRef router;
     private final static Timeout TIMEOUT = Timeout.create(Duration.ofSeconds(5));
+    private static final String SUCCESS_MSG = "Tests executed and stored";
 
     public HttpParse(ActorRef router) {
         this.router = router;
