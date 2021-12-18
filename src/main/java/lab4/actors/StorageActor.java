@@ -14,6 +14,10 @@ import java.util.Map;
 public class StorageActor extends AbstractActor {
     private Map<String, ArrayList<String>> storage = new HashMap<>();
 
+    private void store(PutMessage r) {
+
+    }
+
     @Override
     public Receive createReceive() {
         return ReceiveBuilder.create()
