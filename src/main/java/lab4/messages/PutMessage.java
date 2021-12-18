@@ -1,7 +1,5 @@
 package lab4.messages;
 
-import java.io.Serializable;
-
 public class PutMessage {
     private  final String packID, result;
 
