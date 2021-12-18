@@ -14,9 +14,10 @@ import java.util.concurrent.CompletionStage;
 public class TaskTestingApp {
     private static final int PORT = 8088;
     private static final String HOST = "localhost";
+    private static final String SYS_NAME = "webtest";
 
     public static void main(String[] args) throws Exception {
-        ActorSystem system = ActorSystem.create("webtest");
+        ActorSystem system = ActorSystem.create(SYS_NAME);
         final Http http = Http.get(system);
         final ActorMaterializer materializer = ActorMaterializer.create(system);
         //final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow =
