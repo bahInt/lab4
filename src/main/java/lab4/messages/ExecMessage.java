@@ -1,2 +1,4 @@
-package lab4.messages;public class ExecMessage {
+package lab4.messages;
+
+public class ExecMessage {
 }
