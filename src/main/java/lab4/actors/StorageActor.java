@@ -14,8 +14,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class StorageActor extends AbstractActor {
-    private  final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
-    private Map<String, ArrayList<String>> storage = new HashMap<>();
+    private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
+    private final Map<String, ArrayList<String>> storage = new HashMap<>();
 
     private void store(PutMessage r) {
         ArrayList<String> results = storage.get(r.getPackID());
