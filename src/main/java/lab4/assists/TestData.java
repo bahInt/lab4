@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class TestData {
     @JsonProperty("testName")
     private  final String testName;
+    @JsonProperty("expectedResult")
     private final String expectedResult;
     private final ArrayList<Object> params;
 
