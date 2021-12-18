@@ -12,6 +12,10 @@ public class ResultMessage {
     }
 
     public String getPackID() {
+        return packID;
+    }
+
+    public ArrayList<String> getResults() {
         
     }
 }
