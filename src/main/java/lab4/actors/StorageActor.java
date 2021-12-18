@@ -26,7 +26,7 @@ public class StorageActor extends AbstractActor {
     }
 
     private void sendResult(GetMessage r) {
-        sender().tell(new ResultMessage(r.getPackID(), storage.get(r.getPackID())), self()))
+        sender().tell(new ResultMessage(r.getPackID(), storage.get(r.getPackID())
     }
 
     @Override
