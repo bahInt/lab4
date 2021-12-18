@@ -13,5 +13,8 @@ public class TestData {
         this.params = params;
     }
 
+    public String getTestName() {
+        return testName;
+    }
     
 }
