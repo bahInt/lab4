@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RouterActor extends AbstractActor {
+    private Router router;
     private ActorRef storage;
 
     public RouterActor() {
