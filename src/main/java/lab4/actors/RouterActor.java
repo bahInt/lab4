@@ -31,6 +31,8 @@ public class RouterActor extends AbstractActor {
         router = new Router(new RoundRobinRoutingLogic(), routees);
     }
 
+    private void executeTests(PackageData r) {}
+
     public Receive createReceive() {
         return ReceiveBuilder.create()
                 .match(PackageData.class, this::executeTests)
