@@ -7,5 +7,6 @@ public class GetMessage {
         this.packID = packID;
     }
     public String getPackID() {
+        return packID;
     }
 }
