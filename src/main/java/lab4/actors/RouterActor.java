@@ -15,6 +15,7 @@ import lab4.assists.TestData;
 import lab4.messages.ExecMessage;
 import lab4.messages.GetMessage;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +25,8 @@ public class RouterActor extends AbstractActor {
     private final LoggingAdapter log = Logging.getLogger(getContext().getSystem(), self());
 
     private static final String STORAGE_NAME = "storage";
+    private static final int MAX_RETRIES = 10;
+    private static final Duration DURATION = Duration.ofMinutes(1);
 
     private Router router;
     private ActorRef storage;
