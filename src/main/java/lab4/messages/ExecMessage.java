@@ -18,4 +18,8 @@ public class ExecMessage {
     public String getPackID() {
         return packID;
     }
+
+    public String getFuncName() {
+        return funcName;
+    }
 }
