@@ -34,7 +34,7 @@ public class RouterActor extends AbstractActor {
         return ReceiveBuilder.create()
                 .match()
                 .match()
-                .matchAny()
+                .matchAny(o -> log.info("recieved unknown message")
                 .build();
     }
 }
